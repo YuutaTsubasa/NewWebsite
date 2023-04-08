@@ -6,8 +6,9 @@
         <title>悠太翼官方網站</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Noto+Sans+TC:wght@400&family=Noto+Sans+TC:wght@700&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
         <link href='@Context.GetLink("/styles/main.css")' rel="stylesheet"/>
+        <link rel="icon" href='@Context.GetLink("/favicon.ico")'>
     </head>
     <body>
         @Html.Partial("_Header")
@@ -16,9 +17,11 @@
                 if (Document.GetBool("IsPost"))
                 {
                     <section class="post_content">
-                        <h1>@Document.GetString(WebKeys.Title)</h1>
-                        <h3>@Document.GetString(WebKeys.Published)</h3>
-                        <img src='@Document.GetString("Thumbnail")' alt='@Document.GetString(WebKeys.Title)' />
+                        <div class="post_meta">
+                            <h1>@Document.GetString(WebKeys.Title)</h1>
+                            <h3>@Document.GetString(WebKeys.Published)</h3>
+                            <img src='@Document.GetString("Thumbnail")' alt='@Document.GetString(WebKeys.Title)' />
+                        </div>
                         @RenderBody()
                     </section>
                 }

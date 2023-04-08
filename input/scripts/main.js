@@ -1,7 +1,7 @@
 const CURRENT_TAG_CLASS = "current";
 
 function getTagComponent(tag){
-    return `<li>${tag}</li>`;
+    return `<li class="${tag}">${tag}</li>`;
 }
 
 function getTagsComponent(tags){
@@ -37,12 +37,15 @@ document.addEventListener("DOMContentLoaded", function(){
         let currentTag;
         function changeTag(selectedTag){
             currentTag = selectedTag.innerText;
+
             for(let tag of tags){
                 tag.classList.remove(CURRENT_TAG_CLASS);
             }
             selectedTag.classList.add(CURRENT_TAG_CLASS);
 
-            printPosts(posts);
+            printPosts(currentTag == tags[0].innerText
+                ? posts
+                : posts.filter(post => post.Tags.includes(currentTag)));
         }
         changeTag(tags[0]);
 
