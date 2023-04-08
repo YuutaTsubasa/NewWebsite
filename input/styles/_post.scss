@@ -1,0 +1,37 @@
+.post_content {
+    width: 100%;
+    font-size: 15pt;
+    line-height: 1.5;
+    padding-bottom: 23px;
+
+    h1 {
+        margin: 5px 0px;
+        font-size: 32pt;
+    }
+
+    h3 {
+        margin: 10px 0px;
+        font-size: 17pt;
+        color: grey;
+    }
+
+    a {
+        color: rgb(1, 12, 129);
+        text-decoration: none;
+
+        &:hover, &:active {
+            color: grey;
+        }
+    }
+
+    img {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    iframe {
+        display: block;
+        margin: 0 auto;
+    }
+}

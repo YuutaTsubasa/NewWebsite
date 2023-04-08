@@ -1,0 +1,6 @@
+<nav class="tags">
+    <ul>
+        <li>全部</li>
+        @foreach(var tag in Document.GetList<string>("AllTags")){ <li>@tag</li> }
+    </ul>
+</nav>
