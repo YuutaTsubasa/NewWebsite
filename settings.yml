@@ -1,4 +1,12 @@
 MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.36"
+SiteTitle: 悠太翼官方網站
+PageTitle: |
+  =>
+  {
+    string siteTitle = Context.GetString("SiteTitle");
+    string title = GetString("Title");
+    return string.IsNullOrWhiteSpace(siteTitle) ? title : (string.IsNullOrWhiteSpace(title) ? $"{siteTitle} | 首頁" : $"{siteTitle} | {title}");
+  }
 PostSources: posts/*
 AllPosts: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ToList()
 IsPost: => Context.GetDocumentList("AllPosts").ContainsById(Document)
