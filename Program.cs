@@ -3,7 +3,7 @@
   .CreateWeb(args)
   .DeployToGitHubPages(
         "YuutaTsubasa",
-        "NewWebsite",
+        "yuutatsubasa.github.io",
         Config.FromSetting<string>("GITHUB_TOKEN")
     )
   .RunAsync();

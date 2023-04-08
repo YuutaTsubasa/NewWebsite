@@ -4,5 +4,5 @@ AllPosts: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ToL
 IsPost: => Context.GetDocumentList("AllPosts").ContainsById(Document)
 AllTags: => Context.GetDocumentList("AllPosts").SelectMany(post => post.GetList<string>("Tags")).Distinct().ToList()
 GitHubOwner: "YuutaTsubasa"
-GitHubName: "NewWebsite"
+GitHubName: "yuutatsubasa.github.io"
 GitHubToken: => Config.FromSetting<string>("GITHUB_TOKEN")
