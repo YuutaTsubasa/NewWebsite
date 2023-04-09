@@ -45,6 +45,22 @@
                         @RenderBody()
                     </section>
                 }
+                else if (Document.GetBool("IsPage"))
+                {
+                    <section class="page_content">
+                        <div class="page_meta">
+                            <h1>@Document.GetString(WebKeys.Title)</h1>
+                            <hr />
+                        </div>
+
+                        @if (!Document.GetBool("OutsidePageContent")){
+                            @RenderBody()
+                        }
+                    </section>
+                    @if (Document.GetBool("OutsidePageContent")){
+                        @RenderBody()
+                    }
+                }
                 else {
                     @RenderBody()
                 }

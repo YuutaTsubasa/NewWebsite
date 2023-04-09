@@ -1,5 +1,6 @@
 StartDate: 2023/04/10
 Title: "本週週表"
+OutsidePageContent: true
 ---
 @{
     IEnumerable<DateTime> EachDay(DateTime from)
@@ -51,7 +52,6 @@ Title: "本週週表"
         .OrderByDescending(post => post.GetDateTime("Published"))
         .First(post => post.GetList<string>("Tags").Any(tag => tag == "翼友作品"));
 }
-<h1>本週週表</h1>
 <button id="download_weekly">下載週表</button>
 <section class="weekly_container">
     <section class="weekly">
