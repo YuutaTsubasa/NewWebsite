@@ -168,7 +168,7 @@ section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_da
 
 section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .date_part { width: 130px; }
 
-section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .time_part { height: 100%; font-size: 30px; }
+section.weekly .weekly_right_part ul.weekly_items li.weekly_item .weekly_item_date .content_part .time_part { width: 180px; height: 100%; font-size: 30px; }
 
 section.weekly .weekly_right_part ul.weekly_items .content { display: flex; align-items: center; font-size: 25pt; padding: 10px; height: 95%; box-sizing: border-box; border-radius: 10px; background: repeating-linear-gradient(-45deg, rgba(30, 54, 109, 0.7), rgba(30, 54, 109, 0.7) 5px, rgba(13, 21, 101, 0.7) 5px, rgba(13, 21, 101, 0.7) 25px); color: white; font-weight: 700; box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); text-shadow: 0.2em 0.2em 0.4em black; }
 
