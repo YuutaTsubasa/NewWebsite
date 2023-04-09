@@ -66,7 +66,7 @@ section.post_list .post a { text-decoration: none; color: inherit; }
 
 section.post_list .post a.thumbnail { display: block; position: relative; margin: 0 auto; border-radius: 10px; width: 288px; height: 162px; background-color: white; transition: top 0.3s ease-in-out, filter 0.3s ease-in-out; top: 0px; }
 
-section.post_list .post a.thumbnail img { width: 100%; max-height: 100%; object-fit: contain; }
+section.post_list .post a.thumbnail img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; margin: 0 auto; }
 
 @media (max-width: 930px) { section.post_list .post a.thumbnail { width: 100%; height: auto; aspect-ratio: 16 / 9; } }
 
@@ -90,9 +90,9 @@ section.post_list .post ul li { display: block; font-size: 12pt; padding: 5px 10
 
 nav.tags { margin: 50px 0 30px 0; }
 
-nav.tags ul { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; gap: 20px; }
+nav.tags ul { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; column-gap: 10px; row-gap: 15px; }
 
-nav.tags ul li { display: block; font-size: 15pt; padding: 10px 20px; cursor: pointer; background-color: #e6e6e6; border-radius: 20px; }
+nav.tags ul li { display: block; text-align: center; font-size: 15pt; padding: 10px 20px; cursor: pointer; background-color: #e6e6e6; border-radius: 20px; }
 
 nav.tags ul li.current, nav.tags ul li:hover, nav.tags ul li:active { color: white; background-color: #191919; }
 
