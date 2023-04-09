@@ -28,7 +28,7 @@ section.introduction .introduction_content h3 { font-size: 18pt; color: #999997;
 
 section.introduction .introduction_content h1 { font-size: 44pt; color: black; font-weight: 700; }
 
-section.introduction ul.page_list { list-style-type: none; padding: 0; margin-top: 20px; }
+section.introduction ul.page_list { display: flex; list-style-type: none; padding: 0; margin-top: 20px; gap: 10px; }
 
 section.introduction ul.page_list li { padding: 0; font-size: 15pt; }
 
@@ -110,7 +110,7 @@ section.post_list .post ul { display: flex; list-style-type: none; padding: 0; m
 
 section.post_list .post ul li { display: block; font-size: 8pt; padding: 3px 10px; color: white; border-radius: 20px; }
 
-nav.tags { margin: 50px 0 30px 0; }
+nav.tags { margin: 15px 0 15px 0; }
 
 nav.tags ul { display: flex; flex-wrap: wrap; padding: 0; list-style-type: none; column-gap: 10px; row-gap: 15px; }
 
@@ -118,25 +118,25 @@ nav.tags ul li { display: block; text-align: center; font-size: 13pt; padding: 1
 
 nav.tags ul li.current, nav.tags ul li:hover, nav.tags ul li:active { color: white; background-color: #191919; }
 
-.post_content { width: 100%; font-size: 15pt; line-height: 1.5; padding-bottom: 23px; }
+.post_content, .page_content { width: 100%; font-size: 15pt; line-height: 1.5; padding-bottom: 23px; }
 
-.post_content h1 { margin: 5px 0px; font-size: 32pt; }
+.post_content h1, .page_content h1 { margin: 5px 0px; font-size: 32pt; }
 
-.post_content h3 { margin: 2px 0px; font-size: 15pt; color: grey; }
+.post_content h3, .page_content h3 { margin: 2px 0px; font-size: 15pt; color: grey; }
 
-.post_content a { color: #010c81; text-decoration: none; }
+.post_content a, .page_content a { color: #010c81; text-decoration: none; }
 
-.post_content a:hover, .post_content a:active { color: grey; }
+.post_content a:hover, .post_content a:active, .page_content a:hover, .page_content a:active { color: grey; }
 
-.post_content img { display: block; width: 95%; margin: 0 auto; }
+.post_content img, .page_content img { display: block; width: 95%; margin: 0 auto; }
 
-.post_content img.title_icon { display: inline-block; width: 15px; height: 15px; margin-right: 8px; filter: invert(50%) sepia(17%) saturate(0%) hue-rotate(181deg) brightness(98%) contrast(80%); }
+.post_content img.title_icon, .page_content img.title_icon { display: inline-block; width: 15px; height: 15px; margin-right: 8px; filter: invert(50%) sepia(17%) saturate(0%) hue-rotate(181deg) brightness(98%) contrast(80%); }
 
-.post_content hr { margin: 15px 0; }
+.post_content hr, .page_content hr { margin: 15px 0; }
 
-.post_content iframe { display: block; margin: 0 auto; }
+.post_content iframe, .page_content iframe { display: block; margin: 0 auto; }
 
-.post_content .post_meta { margin-bottom: 15px; }
+.post_content .post_meta, .post_content .page_meta, .page_content .post_meta, .page_content .page_meta { margin-bottom: 15px; }
 
 button#download_weekly { border: 3px solid #0e0b66; margin-bottom: 15px; background-color: white; width: 120px; font-size: 15pt; font-weight: 700; }
 
