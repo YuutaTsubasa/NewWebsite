@@ -13,6 +13,9 @@ SiteDescription: 為台灣個人勢 Vtuber、盔甲正太系程式 Vtuber，語�
 PostSources: posts/*
 AllPosts: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ToList()
 IsPost: => Context.GetDocumentList("AllPosts").ContainsById(Document)
+PageSources: pages/*
+AllPages: => Context.Outputs.FilterSources(Context.GetString("PageSources")).ToList()
+IsPage: => Context.GetDocumentList("AllPages").ContainsById(Document)
 AllTags: => Context.GetDocumentList("AllPosts").SelectMany(post => post.GetList<string>("Tags")).Distinct().ToList()
 GitHubOwner: "YuutaTsubasa"
 GitHubName: "yuutatsubasa.github.io"

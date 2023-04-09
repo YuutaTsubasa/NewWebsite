@@ -1,0 +1,87 @@
+StartDate: 2023/04/10
+Title: "本週週表"
+---
+@{
+    IEnumerable<DateTime> EachDay(DateTime from)
+    {
+        var day = from.Date;
+        while (true) {
+            yield return day;
+            day = day.AddDays(1);
+        }
+    }
+
+    var items = new Dictionary<string, string>[] {
+        new Dictionary<string, string> {
+            {"Time", "（一）21:30"},
+            {"Title", "霍格華茲的傳承"},
+            {"Tags", "遊戲"}
+        },
+        new Dictionary<string, string> {
+            {"Time", "（二）21:30"},
+            {"Title", "利用 Polygon Runway 頻道同步練習 3D 建模"},
+            {"Tags", "3D"}
+        },
+        new Dictionary<string, string> {
+            {"Time", "（三）休息"}
+        },
+        new Dictionary<string, string> {
+            {"Time", "（四）21:30"},
+            {"Title", "音樂遊戲探索－Rotaeno"},
+            {"Tags", "遊戲"}
+        },
+        new Dictionary<string, string> {
+            {"Time", "（五）休息"}
+        },
+        new Dictionary<string, string> {
+            {"Time", "（六）14:10"},
+            {"Title", "Ren'Py 入門～一起來做電子小說～"},
+            {"Tags", "程式"}
+        },
+        new Dictionary<string, string>{
+            {"Time", "（日）休息"}
+        },
+    };
+
+    var dayWithItems = items.Zip(
+        EachDay(Document.GetDateTime("StartDate")),
+        (item, date) => (Date: date, Item: item));
+
+    var lastestFanArt = Document.GetDocumentList("AllPosts")
+        .OrderByDescending(post => post.GetDateTime("Published"))
+        .First(post => post.GetList<string>("Tags").Any(tag => tag == "翼友作品"));
+}
+<h1>本週週表</h1>
+<button id="download_weekly">下載週表</button>
+<section class="weekly_container">
+    <section class="weekly">
+        <section class="weekly_left_part" style='background-image: url(@lastestFanArt.GetString("Thumbnail"))'>
+            <div class="weekly_author_part">作者：@lastestFanArt.GetString("Author")</div>
+        </section>
+        <section class="weekly_right_part">
+            <h1><img src="/images/white_logo.webp" alt="悠太翼" class="weekly_white_logo"/><img src="/images/weekly/weeklytitle.webp" alt="本週配信" class="weekly_title"/></h1>
+            <ul class="weekly_items">
+                @foreach(var dayWithItem in dayWithItems){
+                    <li class="weekly_item">
+                        <div class="weekly_item_date"><span class="content_part"><span class="date_part">@dayWithItem.Date.ToString("MM/dd")</span><span class="time_part">@dayWithItem.Item["Time"]</span></span></div>
+                        @if (dayWithItem.Item.ContainsKey("Title")){
+                            <div class="content">@dayWithItem.Item["Title"]</div>
+                        }
+                        else {
+                            <div class="content stream_off">休息日</div>
+                        }
+                    </li>
+                }
+            </ul>
+            <nav class="weekly_community">
+                <ul>
+                    <li><a class="twitter" href="https://yutaii.run/twitter" target="_blank"><img src="/images/community_logo/twitter.svg" alt="Twitter Logo" class="logo"/> YuutaTsubasa</a></li>
+                    <li><a class="youtube" href="https://yutaii.run/youtube" target="_blank"><img src="/images/community_logo/youtube.svg" alt="Youtube Logo" class="logo"/> @@YuutaTsubasa</a></li>
+                    <li><a class="facebook" href="https://yutaii.run/facebook" target="_blank"><img src="/images/community_logo/facebook.svg" alt="Facebook Logo" class="logo"/>悠太翼</a></li>
+                    <li><a class="instagram" href="https://yutaii.run/instagram" target="_blank"><img src="/images/community_logo/instagram.svg" alt="Instagram Logo" class="logo"/>yuutatsubasa</a></li>
+                    <li><a class="plurk" href="https://yutaii.run/plurk" target="_blank"><img src="/images/community_logo/plurk.svg" alt="Plurk Logo" class="logo"/>yuutatsubasa</a></li>
+                </ul>
+            </nav>
+        </section>
+    </section>
+</section>

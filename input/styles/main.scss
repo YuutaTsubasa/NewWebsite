@@ -4,7 +4,7 @@ html, body {
     font-family: 'Montserrat', 'Noto Sans TC', 'Noto Sans SC', sans-serif;
     line-height: 1.25;
     font-weight: 400;
-    font-size: 15pt;
+    font-size: 13pt;
 }
 
 @import "header";
@@ -15,3 +15,4 @@ html, body {
 @import "post_list";
 @import "nav_tags";
 @import "post";
+@import "weekly";

@@ -37,7 +37,9 @@
                     <section class="post_content">
                         <div class="post_meta">
                             <h1>@Document.GetString(WebKeys.Title)</h1>
-                            <h3>@Document.GetString(WebKeys.Published)</h3>
+                            <h3><img src="/images/calendar-svgrepo-com.svg" alt="時間" class="title_icon"/>@Document.GetString(WebKeys.Published)</h3>
+                            <h3><img src="/images/person-svgrepo-com.svg" alt="作者或主辦者" class="title_icon"/>@Document.GetString(WebKeys.Author)</h3>
+                            <hr />
                             <img src='@Document.GetString("Thumbnail")' alt='@Document.GetString(WebKeys.Title)' />
                         </div>
                         @RenderBody()
@@ -50,6 +52,7 @@
         </section>
         @Html.Partial("_Footer")
 
+        <script src='@Context.GetLink("/scripts/dom-to-image.js")'></script>
         <script src='@Context.GetLink("/scripts/main.js")'></script>
     </body>
 </html>

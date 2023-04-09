@@ -1,4 +1,6 @@
 section.content {
+    display: flex;
+    flex-direction: column;
     width: 930px;
     margin-top: 50px;
     margin-left: auto;

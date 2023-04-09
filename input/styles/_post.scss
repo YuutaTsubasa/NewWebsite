@@ -10,8 +10,8 @@
     }
 
     h3 {
-        margin: 10px 0px;
-        font-size: 17pt;
+        margin: 2px 0px;
+        font-size: 15pt;
         color: grey;
     }
 
@@ -26,8 +26,20 @@
 
     img {
         display: block;
-        max-width: 80%;
+        width: 95%;
         margin: 0 auto;
+    }
+
+    img.title_icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 8px;
+        filter: invert(50%) sepia(17%) saturate(0%) hue-rotate(181deg) brightness(98%) contrast(80%);
+    }
+
+    hr {
+        margin: 15px 0;
     }
 
     iframe {

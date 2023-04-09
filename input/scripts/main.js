@@ -16,7 +16,7 @@ function getTagsComponent(tags){
 function getPostComponent(post){
     return `<div class="post">` +
         `<a href='${post.Link}' class="thumbnail"><img src="${post.Thumbnail}" alt="${post.Title}" loading="lazy" /></a>` +
-        `<h3>${post.Published}－${post.Author}</h3>` +
+        `<h3><img src="/images/calendar-svgrepo-com.svg" alt="時間" class="title_icon"/>${post.Published}</h3><h3><img src="/images/person-svgrepo-com.svg" alt="作者或主辦者" class="title_icon"/>${post.Author}</h3>` +
         `<ul>${getTagsComponent(post.Tags)}</ul>` +
         `<h2><a href='${post.Link}'>${post.Title}</a></h2>` +
         `</div>`;
@@ -82,6 +82,32 @@ document.addEventListener("DOMContentLoaded", function(){
     if(header){
         header.addEventListener("click", function(event){
             location.assign("/");
+        });
+    }
+
+    let weekly = document.querySelector(".weekly");
+    if (weekly){
+        function changeWeeklyToFitParent(){
+            weekly.style.transform = `scale(${weekly.parentElement.clientWidth / 1920})`; 
+        }
+
+        window.addEventListener("resize", function(){
+            changeWeeklyToFitParent();
+        });
+        changeWeeklyToFitParent();
+
+        let downloadButton = document.querySelector("#download_weekly");
+        downloadButton.addEventListener("click", function(){
+            weekly.style.transform = "scale(1)";
+            domtoimage.toPng(weekly)
+                .then(function (dataUrl) {
+                    var iframe = "<iframe width='100%' height='100%' src='" + dataUrl + "'></iframe>"
+                    let newWindow = window.open();
+                    newWindow.document.open();
+                    newWindow.document.write(iframe);
+                    newWindow.document.close();
+                    changeWeeklyToFitParent();
+                });
         });
     }
 });

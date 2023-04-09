@@ -1,4 +1,4 @@
-nav.community {
+nav.community, nav.weekly_community {
     ul {
         margin: 25px 0px;
         padding: 0px;
@@ -6,20 +6,13 @@ nav.community {
         flex-wrap: wrap;
         list-style-type: none;
         gap: 8px;
+        font-size: 15pt;
         
         li {
-            @media (max-width: 930px) {
-                width: 95%;
-            }
-
             margin: 0px;
             padding: 0px;
 
             a {
-                @media (max-width: 930px) {
-                    width: 100%;
-                }
-
                 display: flex;
                 color: white;
                 text-decoration: none;
@@ -74,6 +67,41 @@ nav.community {
                     img.logo {
                         filter: none;
                     }
+                }
+            }
+        }
+    }
+
+    &.community {
+        ul {
+            li {
+                @media (max-width: 930px) {
+                    width: 95%;
+                }
+
+                a {
+                    @media (max-width: 930px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &.weekly_community {
+        margin-top: 50px;
+        ul {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            font-size: 17pt;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    width: 98%;
                 }
             }
         }
