@@ -27,9 +27,11 @@ section.post_list {
             background-color: white;
 
             img {
-                width: 100%;
+                display: block;
+                max-width: 100%;
                 max-height: 100%;
                 object-fit: contain;
+                margin: 0 auto;
             }
 
             transition: top 0.3s ease-in-out, filter 0.3s ease-in-out;

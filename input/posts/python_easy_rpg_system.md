@@ -6,7 +6,7 @@ Tags:
     - 教學直播
 Thumbnail: /images/posts/python_easy_rpg_system.webp
 ---
-第三次設計的教學實況，希望能夠用比較短的時間讓大家能開始寫寫 Python 程式語言，並且能夠完成一個很簡易的 RPG 對戰系統。
+為了能更快學會程式設計而製作的教學實況，希望能夠用比較短的時間讓大家能開始寫寫 Python 程式語言，並且能夠完成一個很簡易的 RPG 對戰系統。
 
 - [【#程式】Vol. 378: 用範例入門 Python ～目標完成簡單的 RPG 對戰系統～ ](https://www.youtube.com/live/AlXK1qOEdss?feature=share)
 
