@@ -2,27 +2,33 @@
     var TAGS_SETTINGS = new Dictionary<string, Dictionary<string, string>>{
         {"教學直播", new Dictionary<string, string>{
             {"Order", "1"},
-            {"Color", "hsl(235, 98.5%, 25.5%)"}
+            {"Color", "hsl(235, 98.5%, 25.5%)"},
+            {"Url", "tutorial"}
         }},
         {"工具程式", new Dictionary<string, string>{
             {"Order", "2"},
-            {"Color", "hsl(110, 98.5%, 25.5%)"}
+            {"Color", "hsl(110, 98.5%, 25.5%)"},
+            {"Url", "tool"}
         }},
         {"遊戲作品", new Dictionary<string, string>{
             {"Order", "3"},
-            {"Color", "hsl(50, 98.5%, 25.5%)"}
+            {"Color", "hsl(50, 98.5%, 25.5%)"},
+            {"Url", "game"}
         }},
         {"Cover", new Dictionary<string, string>{
             {"Order", "4"},
-            {"Color", "hsl(200, 98.5%, 25.5%)"}
+            {"Color", "hsl(200, 98.5%, 25.5%)"},
+            {"Url", "cover"}
         }},
         {"活動與合作", new Dictionary<string, string>{
             {"Order", "5"},
-            {"Color", "hsl(310, 98.5%, 25.5%)"}
+            {"Color", "hsl(310, 98.5%, 25.5%)"},
+            {"Url", "activity"}
         }},
         {"翼友作品", new Dictionary<string, string>{
             {"Order", "6"},
-            {"Color", "hsl(0, 98.5%, 25.5%)"}
+            {"Color", "hsl(0, 98.5%, 25.5%)"},
+            {"Url", "fanart"}
         }}};
 }
 <style>
@@ -40,7 +46,7 @@
     <ul>
         <li>全部</li>
         @foreach(var tag in Document.GetList<string>("AllTags").OrderBy(tag => int.Parse(TAGS_SETTINGS[tag]["Order"]))){ 
-            <li>@tag</li> 
+            <li data-url="@TAGS_SETTINGS[tag]["Url"]">@tag</li> 
         }
     </ul>
 </nav>
