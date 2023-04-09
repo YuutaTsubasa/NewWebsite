@@ -17,13 +17,8 @@
         <meta name="msapplication-starturl" content='@Context.GetLink("/")' />
                 
         <meta property="og:title" content='@Document.GetString("PageTitle")' />
-        @if (Document.ContainsKey("Thumbnail"))
-        {
-            <meta property="og:image" content='@Document.GetString("Thumbnail")' />
-        }
-        else {
-            <meta property="og:image" content='/images/headerbg.webp' />
-        }
+        <meta property="og:image" content='/images/meta.png' />
+        <meta property="og:image:alt" content='@Document.GetString("PageTitle")' />
         <meta property="og:type" content="website" />
         <meta property="og:url" content='@Document.GetLink(true)' />
 
