@@ -14,7 +14,7 @@ function getTagsComponent(tags){
 
 function getPostComponent(post){
     return `<div class="post">` +
-        `<a href='${post.Link}' class="thumbnail" style='background-image: url("${post.Thumbnail}")'></a>` +
+        `<a href='${post.Link}' class="thumbnail"><img src="${post.Thumbnail}" alt="${post.Title}" loading="lazy" /></a>` +
         `<h3>${post.Published}－${post.Author}</h3>` +
         `<ul>${getTagsComponent(post.Tags)}</ul>` +
         `<h2><a href='${post.Link}'>${post.Title}</a></h2>` +

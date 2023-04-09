@@ -8,10 +8,18 @@ nav.community {
         gap: 8px;
         
         li {
+            @media (max-width: 930px) {
+                width: 95%;
+            }
+
             margin: 0px;
             padding: 0px;
 
             a {
+                @media (max-width: 930px) {
+                    width: 100%;
+                }
+
                 display: flex;
                 color: white;
                 text-decoration: none;

@@ -1,6 +1,10 @@
 header{
     &.big {
         height: 80vh;
+
+        @media (max-width: 930px) {
+            height: 300px;
+        }
     }
 
     &.small {

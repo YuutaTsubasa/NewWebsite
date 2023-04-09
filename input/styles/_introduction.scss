@@ -18,6 +18,11 @@ section.introduction {
             --mask-repeat: no-repeat;
 
             width: 100%;
+            @media (max-width: 930px) {
+                width: 50%;
+            }
+
+
             -webkit-mask-image: var(--mask-image, none);
             mask-image: var(--mask-image, none);
             -webkit-mask-position: var(--mask-position, 0);
