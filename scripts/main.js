@@ -102,13 +102,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
             let originalBorder = weekly.style.border;
             weekly.style.border = "0";
+            let newWindow = window.open();
             domtoimage.toPng(weekly)
                 .then(function (dataUrl) {
-                    var iframe = "<iframe width='100%' height='100%' src='" + dataUrl + "'></iframe>"
-                    let newWindow = window.open();
-                    newWindow.document.open();
-                    newWindow.document.write(iframe);
-                    newWindow.document.close();
+                    var img = "<img src='" + dataUrl + "'/>"
+                    newWindow.document.write(img);
                     weekly.style.border = originalBorder;
                     changeWeeklyToFitParent();
                 });
