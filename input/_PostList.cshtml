@@ -15,7 +15,7 @@
                 {Link: '@ChangeToOutputPathWorkaround(post.GetLink())', 
                 Title: '@post.GetString("Title")',
                 Thumbnail: '@post.GetString("Thumbnail")',
-                Published: '@post.GetString("Published")',
+                Published: '@post.GetDateTime("Published").ToString("yyyy/MM/dd")',
                 Author: '@post.GetString("Author")',
                 Tags: [
                     @foreach(var tag in post.GetList<string>("Tags")){
