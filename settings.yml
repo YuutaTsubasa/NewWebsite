@@ -7,6 +7,9 @@ PageTitle: |
     string title = GetString("Title");
     return string.IsNullOrWhiteSpace(siteTitle) ? title : (string.IsNullOrWhiteSpace(title) ? $"{siteTitle} | 首頁" : $"{siteTitle} | {title}");
   }
+SiteAuthor: 悠太翼
+SiteAuthorTitle: VTuber / VCoder / VSinger
+SiteDescription: 為台灣個人勢 Vtuber、盔甲正太系程式 Vtuber，語言主要以中文為主，直播內容以程式、唱歌、遊戲、雜談為主。
 PostSources: posts/*
 AllPosts: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ToList()
 IsPost: => Context.GetDocumentList("AllPosts").ContainsById(Document)

@@ -3,13 +3,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @if(!string.IsNullOrWhiteSpace(Document.GetString(WebKeys.Title)))
-        {
-            <meta name="description" content="@Document.GetString(WebKeys.Title)">
-        }
+        <meta name="description" content='@Document.GetString("SiteAuthor")@Document.GetString("SiteDescription")'>
         @if(Document.ContainsKey(WebKeys.Author))
         {
             <meta name="author" content="@Document.GetString(WebKeys.Author)">
+        }
+        else {
+            <meta name="author" content='@Document.GetString("SiteAuthor")'>
         }
         <title>@Document.GetString("PageTitle")</title>
         <meta name="application-name" content='@Document.GetString("SiteTitle")' />
