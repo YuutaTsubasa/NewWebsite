@@ -99,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function(){
         let downloadButton = document.querySelector("#download_weekly");
         downloadButton.addEventListener("click", function(){
             weekly.style.transform = "scale(1)";
+
+            let originalBorder = weekly.style.border;
+            weekly.style.border = "0";
             domtoimage.toPng(weekly)
                 .then(function (dataUrl) {
                     var iframe = "<iframe width='100%' height='100%' src='" + dataUrl + "'></iframe>"
@@ -106,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     newWindow.document.open();
                     newWindow.document.write(iframe);
                     newWindow.document.close();
+                    weekly.style.border = originalBorder;
                     changeWeeklyToFitParent();
                 });
         });
