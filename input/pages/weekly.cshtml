@@ -65,7 +65,14 @@ Title: "本週週表"
                     <li class="weekly_item">
                         <div class="weekly_item_date"><span class="content_part"><span class="date_part">@dayWithItem.Date.ToString("MM/dd")</span><span class="time_part">@dayWithItem.Item["Time"]</span></span></div>
                         @if (dayWithItem.Item.ContainsKey("Title")){
-                            <div class="content">@dayWithItem.Item["Title"]</div>
+                            <div class="content">
+                                <ul class="weekly_tags">
+                                    @foreach(var tag in dayWithItem.Item["Tags"].Split(',')){ 
+                                        <li>@tag</li> 
+                                    }
+                                </ul>
+                                @dayWithItem.Item["Title"]
+                            </div>
                         }
                         else {
                             <div class="content stream_off">休息日</div>
