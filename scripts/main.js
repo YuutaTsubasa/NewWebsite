@@ -1,4 +1,5 @@
 const CURRENT_TAG_CLASS = "current";
+const TAG_SEARCH_PARAMS_KEY = "tag";
 
 function getTagComponent(tag){
     return `<li class="${tag}">${tag}</li>`;
@@ -30,12 +31,21 @@ function printPosts(posts){
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", function(){
     let tags = document.querySelectorAll("nav.tags li");
     if (tags.length > 0){
         let currentTag;
-        function changeTag(selectedTag){
+        function changeTag(selectedTag, isFirst = false){
+            if (!isFirst) {
+                if (selectedTag.dataset.url){
+                    let searchParams = new URLSearchParams();
+                    searchParams.set(TAG_SEARCH_PARAMS_KEY, selectedTag.dataset.url); 
+                    window.history.pushState('', '', `/?${searchParams}`);
+                }
+                else {
+                    window.history.pushState('', '', '/');
+                }
+            }
             currentTag = selectedTag.innerText;
 
             for(let tag of tags){
@@ -47,7 +57,19 @@ document.addEventListener("DOMContentLoaded", function(){
                 ? posts
                 : posts.filter(post => post.Tags.includes(currentTag)));
         }
-        changeTag(tags[0]);
+
+        function changeCurrentSelectedTag() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const currentTagUrl = urlParams.get(TAG_SEARCH_PARAMS_KEY);
+            const selectedTag = [].slice.apply(tags).filter(tag => tag.dataset.url === currentTagUrl);
+            changeTag(selectedTag.length > 0 ? selectedTag[0] : tags[0], true);
+        }
+        changeCurrentSelectedTag();
+
+        window.addEventListener("popstate", function(event) {
+            changeCurrentSelectedTag();
+        });
 
         for(let tag of tags) {
             tag.addEventListener("click", function(event){
