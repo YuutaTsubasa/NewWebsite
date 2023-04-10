@@ -103,12 +103,17 @@ document.addEventListener("DOMContentLoaded", function(){
             let originalBorder = weekly.style.border;
             weekly.style.border = "0";
             let newWindow = window.open();
+            newWindow.document.write("載入中......");
             domtoimage.toPng(weekly)
-                .then(function (dataUrl) {
-                    var img = "<img src='" + dataUrl + "'/>"
-                    newWindow.document.write(img);
-                    weekly.style.border = originalBorder;
-                    changeWeeklyToFitParent();
+                .then(function (_) {
+                    domtoimage.toPng(weekly)
+                        .then(function (dataUrl) {
+                        var img = "<img src='" + dataUrl + "'/>"
+                        newWindow.document.body.innerText = "";
+                        newWindow.document.write(img);
+                        weekly.style.border = originalBorder;
+                        changeWeeklyToFitParent();
+                    });
                 });
         });
     }
