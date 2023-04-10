@@ -13,7 +13,7 @@ section.post_list {
 
     .post {
         width: 218px;
-        height: auto;
+        height: max-content;
 
         @media (max-width: 930px) {
             width: 100%;

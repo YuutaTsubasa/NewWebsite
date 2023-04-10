@@ -112,4 +112,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 });
         });
     }
+
+    let linkContentSameATags = [].slice.apply(document.querySelectorAll("a"))
+        .filter(aTag => aTag.getAttribute("href") === aTag.innerText);
+    if (linkContentSameATags.length > 0){
+        for(let tag of linkContentSameATags){
+            tag.classList.add("linkContentSame");
+        }
+    }
+        
 });

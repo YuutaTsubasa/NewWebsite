@@ -22,6 +22,11 @@
         &:hover, &:active {
             color: grey;
         }
+
+        &.linkContentSame {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
     }
 
     img {
@@ -45,6 +50,16 @@
     iframe {
         display: block;
         margin: 0 auto;
+
+        @media (max-width: 930px) {
+            
+        }
+
+        &[src*="youtube"] {
+            width: 95%;
+            height: 100%;
+            aspect-ratio: 560 / 315;
+        }
     }
 
     .post_meta, .page_meta {
