@@ -78,7 +78,7 @@ section.post_list { display: flex; flex-wrap: wrap; column-gap: 15px; row-gap: 2
 
 @media (max-width: 930px) { section.post_list { width: 95%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: space-between; } }
 
-section.post_list .post { width: 218px; height: auto; }
+section.post_list .post { width: 218px; height: max-content; }
 
 @media (max-width: 930px) { section.post_list .post { width: 100%; } }
 
@@ -128,6 +128,8 @@ nav.tags ul li.current, nav.tags ul li:hover, nav.tags ul li:active { color: whi
 
 .post_content a:hover, .post_content a:active, .page_content a:hover, .page_content a:active { color: grey; }
 
+.post_content a.linkContentSame, .page_content a.linkContentSame { overflow-wrap: break-word; word-wrap: break-word; }
+
 .post_content img, .page_content img { display: block; width: 95%; margin: 0 auto; }
 
 .post_content img.title_icon, .page_content img.title_icon { display: inline-block; width: 15px; height: 15px; margin-right: 8px; filter: invert(50%) sepia(17%) saturate(0%) hue-rotate(181deg) brightness(98%) contrast(80%); }
@@ -136,9 +138,11 @@ nav.tags ul li.current, nav.tags ul li:hover, nav.tags ul li:active { color: whi
 
 .post_content iframe, .page_content iframe { display: block; margin: 0 auto; }
 
+.post_content iframe[src*="youtube"], .page_content iframe[src*="youtube"] { width: 95%; height: 100%; aspect-ratio: 560 / 315; }
+
 .post_content .post_meta, .post_content .page_meta, .page_content .post_meta, .page_content .page_meta { margin-bottom: 15px; }
 
-button#download_weekly { border: 3px solid #0e0b66; margin-bottom: 15px; background-color: white; width: 120px; font-size: 15pt; font-weight: 700; }
+button#download_weekly { border: 3px solid #0e0b66; margin-bottom: 15px; background-color: white; width: max-content; font-size: 15pt; font-weight: 700; }
 
 button#download_weekly:hover, button#download_weekly:active { border: 3px solid white; background-color: black; color: white; }
 
