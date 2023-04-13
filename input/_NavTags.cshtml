@@ -1,3 +1,4 @@
+@using System.IO
 @{
     var TAGS_SETTINGS = new Dictionary<string, Dictionary<string, string>>{
         {"教學直播", new Dictionary<string, string>{
@@ -31,15 +32,21 @@
             {"Url", "fanart"}
         }}};
 }
-<style>
-    @foreach(var tag in TAGS_SETTINGS){
-        <text>
-        .@Html.Raw(tag.Key) {
-            background-color: @tag.Value["Color"];
+<script>
+    var tagSettings = {
+        @foreach(var tag in TAGS_SETTINGS){
+            <text>
+            "@Html.Raw(tag.Key)": {
+                @foreach(var value in tag.Value) {
+                    <text>
+                        "@Html.Raw(value.Key)": "@Html.Raw(value.Value)",
+                    </text>
+                }
+            },
+            </text>
         }
-        </text>
     }
-</style>
+</script>
 
 
 <nav class="tags">

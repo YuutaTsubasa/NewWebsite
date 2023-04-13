@@ -2,7 +2,7 @@ const CURRENT_TAG_CLASS = "current";
 const TAG_SEARCH_PARAMS_KEY = "tag";
 
 function getTagComponent(tag){
-    return `<li class="${tag}">${tag}</li>`;
+    return `<li${tagSettings ? ` style = "background-color: ${tagSettings[tag].Color}"` : ""}>${tag}</li$>`;
 }
 
 function getTagsComponent(tags){
