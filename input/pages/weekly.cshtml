@@ -1,4 +1,4 @@
-StartDate: 2023/04/10
+StartDate: 2023/04/17
 Title: "本週週表"
 OutsidePageContent: true
 ---
@@ -14,33 +14,33 @@ OutsidePageContent: true
 
     var items = new Dictionary<string, string>[] {
         new Dictionary<string, string> {
-            {"Time", "（一）21:30"},
+            {"Time", "(一) 21:30"},
             {"Title", "霍格華茲的傳承"},
             {"Tags", "遊戲"}
         },
         new Dictionary<string, string> {
-            {"Time", "（二）21:30"},
-            {"Title", "利用 Polygon Runway 頻道同步練習 3D 建模"},
-            {"Tags", "3D"}
+            {"Time", "(二) 21:30"},
+            {"Title", "LeetCode 解題 #14"},
+            {"Tags", "程式"}
         },
         new Dictionary<string, string> {
-            {"Time", "（三）休息"}
+            {"Time", "(三) 休息"}
         },
         new Dictionary<string, string> {
-            {"Time", "（四）21:30"},
-            {"Title", "音樂遊戲探索－Rotaeno"},
+            {"Time", "(四) 21:30"},
+            {"Title", "新瑪奇 Mabinogi #8"},
             {"Tags", "遊戲"}
         },
         new Dictionary<string, string> {
-            {"Time", "（五）休息"}
+            {"Time", "(五) 休息"}
         },
         new Dictionary<string, string> {
-            {"Time", "（六）14:10"},
-            {"Title", "Ren'Py 入門～一起來做電子小說～"},
-            {"Tags", "程式"}
+            {"Time", "(六) 21:30"},
+            {"Title", "霍格華茲的傳承"},
+            {"Tags", "遊戲"}
         },
         new Dictionary<string, string>{
-            {"Time", "（日）休息"}
+            {"Time", "(日) 休息"}
         },
     };
 
@@ -59,7 +59,7 @@ OutsidePageContent: true
             <div class="weekly_author_part">作者：@lastestFanArt.GetString("Author")</div>
         </section>
         <section class="weekly_right_part">
-            <h1><img src="/images/white_logo.webp" alt="悠太翼" class="weekly_white_logo"/><img src="/images/weekly/weeklytitle.webp" alt="本週配信" class="weekly_title"/></h1>
+            <h1 class="weekly_title"><img src="/images/white_logo.webp" alt="悠太翼" class="weekly_white_logo"/><img src="/images/weekly/weeklytitle.webp" alt="本週配信" class="weekly_title"/></h1>
             <ul class="weekly_items">
                 @foreach(var dayWithItem in dayWithItems){
                     <li class="weekly_item">
@@ -82,8 +82,9 @@ OutsidePageContent: true
             </ul>
             <nav class="weekly_community">
                 <ul>
-                    <li><a class="twitter" href="https://yutaii.run/twitter" target="_blank"><img src="/images/community_logo/twitter.svg" alt="Twitter Logo" class="logo"/> YuutaTsubasa</a></li>
                     <li><a class="youtube" href="https://yutaii.run/youtube" target="_blank"><img src="/images/community_logo/youtube.svg" alt="Youtube Logo" class="logo"/> @@YuutaTsubasa</a></li>
+                    <li><a class="twitch" href="https://yutaii.run/twitch" target="_blank"><img src="/images/community_logo/twitch.svg" alt="Twitch Logo" class="logo"/> YuutaTsubasa</a></li>
+                    <li><a class="twitter" href="https://yutaii.run/twitter" target="_blank"><img src="/images/community_logo/twitter.svg" alt="Twitter Logo" class="logo"/> YuutaTsubasa</a></li>
                     <li><a class="facebook" href="https://yutaii.run/facebook" target="_blank"><img src="/images/community_logo/facebook.svg" alt="Facebook Logo" class="logo"/>悠太翼</a></li>
                     <li><a class="instagram" href="https://yutaii.run/instagram" target="_blank"><img src="/images/community_logo/instagram.svg" alt="Instagram Logo" class="logo"/>yuutatsubasa</a></li>
                     <li><a class="plurk" href="https://yutaii.run/plurk" target="_blank"><img src="/images/community_logo/plurk.svg" alt="Plurk Logo" class="logo"/>yuutatsubasa</a></li>
