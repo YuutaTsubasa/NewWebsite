@@ -1,4 +1,4 @@
-StartDate: 2023/04/17
+StartDate: 2023/04/24
 Title: "本週週表"
 OutsidePageContent: true
 ---
@@ -16,31 +16,38 @@ OutsidePageContent: true
         new Dictionary<string, string> {
             {"Time", "(一) 21:30"},
             {"Title", "霍格華茲的傳承"},
-            {"Tags", "遊戲"}
+            {"Tags", "遊戲"},
+            {"Type", "work"}
         },
         new Dictionary<string, string> {
             {"Time", "(二) 21:30"},
-            {"Title", "LeetCode 解題 #14"},
-            {"Tags", "程式"}
+            {"Title", "利用 Polygon Runway 頻道同步練習 3D 建模"},
+            {"Tags", "3D"},
+            {"Type", "work"}
         },
         new Dictionary<string, string> {
-            {"Time", "(三) 休息"}
+            {"Time", "(三) 休息"},
+            {"Type", "holiday"}
         },
         new Dictionary<string, string> {
             {"Time", "(四) 21:30"},
-            {"Title", "新瑪奇 Mabinogi #8"},
-            {"Tags", "遊戲"}
+            {"Title", "新瑪奇 Mabinogi #9"},
+            {"Tags", "遊戲"},
+            {"Type", "work"}
         },
         new Dictionary<string, string> {
-            {"Time", "(五) 休息"}
+            {"Time", "(五) 休息"},
+            {"Type", "holiday"}
         },
         new Dictionary<string, string> {
-            {"Time", "(六) 21:30"},
-            {"Title", "霍格華茲的傳承"},
-            {"Tags", "遊戲"}
+            {"Time", "(六) 有事"},
+            {"Title", "可能突發"},
+            {"Tags", ""},
+            {"Type", "holiday"}
         },
         new Dictionary<string, string>{
-            {"Time", "(日) 休息"}
+            {"Time", "(日) 休息"},
+            {"Type", "holiday"}
         },
     };
 
@@ -64,7 +71,7 @@ OutsidePageContent: true
                 @foreach(var dayWithItem in dayWithItems){
                     <li class="weekly_item">
                         <div class="weekly_item_date"><span class="content_part"><span class="date_part">@dayWithItem.Date.ToString("MM/dd")</span><span class="time_part">@dayWithItem.Item["Time"]</span></span></div>
-                        @if (dayWithItem.Item.ContainsKey("Title")){
+                        @if (dayWithItem.Item.ContainsKey("Type") && dayWithItem.Item["Type"] == "work"){
                             <div class="content">
                                 <ul class="weekly_tags">
                                     @foreach(var tag in dayWithItem.Item["Tags"].Split(',')){ 
@@ -75,7 +82,11 @@ OutsidePageContent: true
                             </div>
                         }
                         else {
-                            <div class="content stream_off">休息日</div>
+                            <div class="content stream_off">@if (dayWithItem.Item.ContainsKey("Title")){
+                                @dayWithItem.Item["Title"]
+                            } else {
+                                <text>休息日</text>
+                            }</div>
                         }
                     </li>
                 }
